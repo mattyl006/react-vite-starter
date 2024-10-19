@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import { Button } from '../components/Button/Button';
+import Button from '../components/Button';
+import { ButtonSize } from '../components/Button/ButtonSize';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -40,14 +41,14 @@ export const Secondary: Story = {
 
 export const Large: Story = {
   args: {
-    size: 'large',
+    size: ButtonSize.LARGE,
     label: 'Button',
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
+    size: ButtonSize.SMALL,
     label: 'Button',
   },
 };
@@ -56,6 +57,6 @@ export const PrimaryLarge: Story = {
   args: {
     primary: true,
     label: "Button",
-    size: 'large'
+    size: ButtonSize.LARGE
   }
 };
