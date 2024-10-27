@@ -3,6 +3,7 @@ import { fn } from "@storybook/test";
 
 import Button from ".";
 import { ButtonSize } from "./ButtonSize";
+import { cn } from "../../utils/cn";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -65,5 +66,12 @@ export const Disabled: Story = {
   args: {
     disabled: true,
     label: "Disabled button",
+  },
+};
+
+export const BlueHover: Story = {
+  args: {
+    label: "Button with blue hover",
+    className: "hover:bg-blue-400",
   },
 };

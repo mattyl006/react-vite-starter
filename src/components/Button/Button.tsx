@@ -1,15 +1,12 @@
 import React, { ComponentProps } from "react";
 import { ButtonSize } from "./ButtonSize";
+import { cn } from "../../utils/cn";
 import "./button.css";
 
 type ButtonProps = {
-  /** Is this the principal call to action on the page? */
   primary?: boolean;
-  /** What background color to use */
   backgroundColor?: string;
-  /** How large should the button be? */
   size?: ButtonSize;
-  /** Button contents */
   label: string;
 } & ComponentProps<"button">;
 
@@ -18,6 +15,8 @@ const Button: React.FC<ButtonProps> = ({
   primary = false,
   size = "medium",
   backgroundColor,
+  className,
+  disabled,
   label,
   ...props
 }): JSX.Element => {
@@ -27,12 +26,11 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type="button"
-      className={[
-        "storybook-button",
-        `storybook-button--${size}`,
-        mode,
-        "disabled:bg-slate-400",
-      ].join(" ")}
+      className={cn(
+        `storybook-button, storybook-button--${size} ${mode} disabled:bg-slate-400`,
+        className,
+        { "hover:transparent": disabled }
+      )}
       style={{ backgroundColor }}
       {...props}
     >
