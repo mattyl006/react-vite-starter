@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { expect, userEvent, within } from "@storybook/test";
 
-import Page from "../pages/Page";
+import Page from ".";
 
 const meta = {
-  title: "Example/Page",
+  title: "pages/Page",
   component: Page,
   parameters: {
     // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout
