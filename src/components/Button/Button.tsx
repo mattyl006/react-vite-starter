@@ -1,6 +1,6 @@
-import React from "react";
-import "./button.css";
+import React, { ComponentProps } from "react";
 import { ButtonSize } from "./ButtonSize";
+import "./button.css";
 
 type ButtonProps = {
   /** Is this the principal call to action on the page? */
@@ -11,9 +11,7 @@ type ButtonProps = {
   size?: ButtonSize;
   /** Button contents */
   label: string;
-  /** Optional click handler */
-  onClick?: () => void;
-};
+} & ComponentProps<"button">;
 
 /** Primary UI component for user interaction */
 const Button: React.FC<ButtonProps> = ({
@@ -29,9 +27,12 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
+      className={[
+        "storybook-button",
+        `storybook-button--${size}`,
+        mode,
+        "disabled:bg-slate-400",
+      ].join(" ")}
       style={{ backgroundColor }}
       {...props}
     >

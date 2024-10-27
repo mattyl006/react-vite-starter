@@ -60,3 +60,10 @@ export const PrimaryLarge: Story = {
     size: ButtonSize.LARGE,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    label: "Disabled button",
+  },
+};
