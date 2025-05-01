@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../Button/Button";
-import { ButtonSize } from "../Button/ButtonSize";
+import { ButtonSizeStyle } from "../Button/ButtonSizeStyle";
 import "./header.css";
 
 type User = {
@@ -53,17 +53,21 @@ const Header: React.FC<HeaderProps> = ({
               Welcome, <b>{user.name}</b>!
             </span>
             <Button
-              size={ButtonSize.SMALL}
+              size={ButtonSizeStyle.SMALL}
               onClick={onLogout}
               label="Log out"
             />
           </>
         ) : (
           <>
-            <Button size={ButtonSize.SMALL} onClick={onLogin} label="Log in" />
+            <Button
+              size={ButtonSizeStyle.SMALL}
+              onClick={onLogin}
+              label="Log in"
+            />
             <Button
               primary
-              size={ButtonSize.SMALL}
+              size={ButtonSizeStyle.SMALL}
               onClick={onCreateAccount}
               label="Sign up"
             />
