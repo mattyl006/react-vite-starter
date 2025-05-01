@@ -1,7 +1,6 @@
 import React, { ComponentProps } from "react";
 import { ButtonSizeStyle } from "./ButtonSizeStyle";
 import { cn } from "../../utils/cn";
-import "./button.css";
 
 type ButtonProps = {
   primary?: boolean;
